@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		97722AFB1C2B3BC100128F7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722AFA1C2B3BC100128F7B /* AppDelegate.swift */; };
-		97722AFD1C2B3BC100128F7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722AFC1C2B3BC100128F7B /* ViewController.swift */; };
 		97722B001C2B3BC100128F7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97722AFE1C2B3BC100128F7B /* Main.storyboard */; };
 		97722B021C2B3BC100128F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97722B011C2B3BC100128F7B /* Assets.xcassets */; };
 		97722B051C2B3BC100128F7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97722B031C2B3BC100128F7B /* LaunchScreen.storyboard */; };
@@ -20,6 +19,8 @@
 		97722B201C2B3BC100128F7B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722B1F1C2B3BC100128F7B /* ExtensionDelegate.swift */; };
 		97722B221C2B3BC100128F7B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722B211C2B3BC100128F7B /* ComplicationController.swift */; };
 		97722B241C2B3BC100128F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97722B231C2B3BC100128F7B /* Assets.xcassets */; };
+		97722B341C2B5F2100128F7B /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722B331C2B5F2100128F7B /* DisplayViewController.swift */; };
+		97722B361C2B60A200128F7B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97722B351C2B60A200128F7B /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 /* Begin PBXFileReference section */
 		97722AF71C2B3BC100128F7B /* CountdownTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountdownTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97722AFA1C2B3BC100128F7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97722AFC1C2B3BC100128F7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97722AFF1C2B3BC100128F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97722B011C2B3BC100128F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97722B041C2B3BC100128F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		97722B211C2B3BC100128F7B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		97722B231C2B3BC100128F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97722B251C2B3BC100128F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97722B331C2B5F2100128F7B /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		97722B351C2B60A200128F7B /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				97722AFA1C2B3BC100128F7B /* AppDelegate.swift */,
-				97722AFC1C2B3BC100128F7B /* ViewController.swift */,
 				97722AFE1C2B3BC100128F7B /* Main.storyboard */,
 				97722B011C2B3BC100128F7B /* Assets.xcassets */,
 				97722B031C2B3BC100128F7B /* LaunchScreen.storyboard */,
 				97722B061C2B3BC100128F7B /* Info.plist */,
+				97722B331C2B5F2100128F7B /* DisplayViewController.swift */,
+				97722B351C2B60A200128F7B /* EditViewController.swift */,
 			);
 			path = CountdownTutorial;
 			sourceTree = "<group>";
@@ -289,8 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97722AFD1C2B3BC100128F7B /* ViewController.swift in Sources */,
 				97722AFB1C2B3BC100128F7B /* AppDelegate.swift in Sources */,
+				97722B341C2B5F2100128F7B /* DisplayViewController.swift in Sources */,
+				97722B361C2B60A200128F7B /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +541,7 @@
 				97722B2A1C2B3BC100128F7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97722B2C1C2B3BC100128F7B /* Build configuration list for PBXNativeTarget "CountdownTutorial WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +550,7 @@
 				97722B2E1C2B3BC100128F7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97722B301C2B3BC100128F7B /* Build configuration list for PBXNativeTarget "CountdownTutorial" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +559,7 @@
 				97722B321C2B3BC100128F7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

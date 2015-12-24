@@ -8,12 +8,32 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var yearsLabel: WKInterfaceLabel!
     @IBOutlet var monthsLabel: WKInterfaceLabel!
     @IBOutlet var daysLabel: WKInterfaceLabel!
+    
+    var session : WCSession!
+    
+    override init() {
+        super.init()
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        // get values from app context
+        let displayDate = (applicationContext["dateKey"] as? String)
+        
+        // save to user defaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(displayDate, forKey: "dateKey")
+    }
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -44,8 +64,13 @@ class InterfaceController: WKInterfaceController {
         let sevenYears: NSDateComponents = NSDateComponents()
         sevenYears.setValue(7, forComponent: NSCalendarUnit.Year);
         
-        // hard-code start date value for part one of this tutorial
-        let startDateIntertech: NSDate = dateFormatter.dateFromString("2005-06-01")!
+        // get values from user defaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var startDateIntertech = NSDate()
+        if let dateString = defaults.stringForKey("dateKey")
+        {
+            startDateIntertech = dateFormatter.dateFromString(dateString)!
+        }
         
         // add 7 years to our start date to calculate the date of our sabbatical
         var sabbaticalDate = userCalendar.dateByAddingComponents(sevenYears, toDate: startDateIntertech,
