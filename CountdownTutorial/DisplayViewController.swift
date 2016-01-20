@@ -57,5 +57,10 @@ class DisplayViewController: UIViewController, WCSessionDelegate {
         } catch {
             print("Error updating application context.")
         }
+        
+        // update complication
+        if session.watchAppInstalled {
+            session.transferCurrentComplicationUserInfo(applicationDict)
+        }
     }
 }
